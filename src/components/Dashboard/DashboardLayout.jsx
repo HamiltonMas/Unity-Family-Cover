@@ -26,6 +26,7 @@ const DashboardLayout = ({ children, user }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const menuRef = useRef(null);
 
+  // ✅ Lowercase paths to match App.js routes
   const navItems = [
     { label: "Dashboard", path: "/dashboard", icon: <FaChartPie /> },
     { label: "Branches", path: "/branches", icon: <FaMapMarkerAlt /> },
