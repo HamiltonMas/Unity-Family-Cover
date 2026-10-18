@@ -1,0 +1,555 @@
+/* src/styles/DashboardLayout.module.css */
+
+/* ==================== DASHBOARD CONTAINER ==================== */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fc;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  position: relative;
+}
+
+/* ==================== MOBILE OVERLAY ==================== */
+.sidebarOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  backdrop-filter: blur(2px);
+}
+
+/* ==================== SIDEBAR ==================== */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 999;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.sidebarHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.sidebarLogoImg {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+}
+
+.sidebarTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.sidebarCloseBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================== SIDEBAR NAV ==================== */
+.sidebarNav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.navItemActive {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.navIcon {
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.navLabel {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ==================== SIDEBAR FOOTER ==================== */
+.sidebarFooter {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logoutBtn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.logoutBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* ==================== MAIN CONTENT ==================== */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  margin-left: 260px;
+  transition: margin-left 0.3s ease;
+}
+
+/* ==================== HEADER (STICKY ON DESKTOP/TABLET) ==================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 1rem;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.mobileMenuBtn {
+  display: none;
+  background: #f1f5f9;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.mobileMenuBtn:hover {
+  background: #e2e8f0;
+}
+
+.pageTitle {
+  font-size: 1.25rem;
+  color: #1e293b;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ==================== NOTIFICATION BUTTON ==================== */
+.notificationBtn {
+  position: relative;
+  background: #f8fafc;
+  border: none;
+  font-size: 1.2rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.notificationBtn:hover {
+  color: #3b82f6;
+  background: #e0f2fe;
+}
+
+.notificationCount {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 50%;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  padding: 0 4px;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ==================== PROFILE DROPDOWN ==================== */
+.profileDropdown {
+  position: relative;
+}
+
+.profileIcon {
+  font-size: 1.8rem;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 0.25rem;
+  background: #f8fafc;
+  display: block;
+}
+
+.profileMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  padding: 0.75rem;
+  width: 200px;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileName {
+  font-weight: 600;
+  color: #1e293b;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.profileLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  color: #475569;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.profileLink:hover {
+  background: #f1f5f9;
+  color: #3b82f6;
+}
+
+.profileLinkLogout {
+  color: #ef4444;
+}
+
+.profileLinkLogout:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.menuIcon {
+  font-size: 1rem;
+  width: 16px;
+  text-align: center;
+}
+
+/* ==================== BREADCRUMB ==================== */
+.breadcrumb {
+  padding: 0.75rem 1.5rem;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.breadcrumbActive {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* ==================== CONTENT ==================== */
+.content {
+  flex: 1;
+  padding: 0;
+  background: #f8fafc;
+}
+
+/* ==================== TABLET (≤1024px) ==================== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .main {
+    margin-left: 220px;
+  }
+}
+
+/* ==================== MOBILE (≤768px) — FIXED HEADER ==================== */
+@media (max-width: 768px) {
+  /* Sidebar becomes slide-in drawer */
+  .sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    max-width: 85vw;
+  }
+
+  .sidebar.sidebarOpen {
+    transform: translateX(0);
+  }
+
+  .sidebarCloseBtn {
+    display: flex;
+  }
+
+  .sidebarOverlay {
+    display: block;
+  }
+
+  /* Main takes full width + space for fixed header */
+  .main {
+    margin-left: 0;
+    padding-top: 60px; /* match header height */
+  }
+
+  /* HEADER IS NOW FIXED ON MOBILE */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    z-index: 100;
+    height: 60px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+  }
+
+  .pageTitle {
+    font-size: 1.05rem;
+  }
+
+  .breadcrumb {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .notificationBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+
+  .profileIcon {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==================== SMALL MOBILE (≤480px) ==================== */
+@media (max-width: 480px) {
+  .main {
+    padding-top: 56px; /* match smaller header height */
+  }
+
+  .header {
+    padding: 0.6rem 0.75rem;
+    gap: 0.5rem;
+    height: 56px;
+  }
+
+  .headerRight {
+    gap: 0.4rem;
+  }
+
+  .mobileMenuBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .notificationBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  .notificationCount {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.55rem;
+  }
+
+  .profileIcon {
+    font-size: 1.5rem;
+    padding: 0.2rem;
+  }
+
+  .pageTitle {
+    font-size: 0.95rem;
+  }
+
+  .profileMenu {
+    width: 180px;
+    right: -8px;
+  }
+
+  .breadcrumb {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

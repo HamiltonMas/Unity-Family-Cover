@@ -1,0 +1,615 @@
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+
+/* Box */
+.box {
+  width: 100%;
+}
+
+/* Logo */
+.logoContainer {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.websiteLogo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Header */
+.headerSection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+/* Progress Bar */
+.progressBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.progressBar::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.progressStepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.progressStep {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.progressStepActive {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  transform: scale(1.1);
+}
+
+.progressStepCompleted {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
+
+.progressLabel {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Form Steps */
+.formStep {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Step Header */
+.stepHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.stepHeader h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.stepHeader p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Form Grid */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.inputGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  font-family: inherit;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  background: #ffffff;
+}
+
+.inputError {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.375rem;
+  font-weight: 500;
+}
+
+/* File Upload */
+.fileUploadSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.fileUpload {
+  position: relative;
+  cursor: pointer;
+  border: 2px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.fileUpload:hover {
+  border-color: #6366f1;
+  background: #f8faff;
+}
+
+.fileUpload input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uploadPlaceholder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.uploadPlaceholder span {
+  font-weight: 500;
+}
+
+.uploadPlaceholder small {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.filePreview,
+.logoPreviewSmall {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f3f4f6;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #111827;
+}
+
+.companyLogoPreview {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #d1d5db;
+}
+
+/* Buttons */
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.buttonGroupSingle {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.875rem 1.5rem;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  font-family: inherit;
+}
+
+.primaryBtn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.primaryBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.secondaryBtn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.secondaryBtn:hover {
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Loading States */
+.btnLoading {
+  position: relative;
+  color: transparent;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Review Section */
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.reviewCategory {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.reviewCategory h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.reviewItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.reviewItem label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.reviewItem span {
+  font-size: 0.875rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Notes */
+.note {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #0369a1;
+  margin: 1.5rem 0;
+}
+
+.noteWarning {
+  background: #fffbeb;
+  border-color: #fed7aa;
+  color: #92400e;
+}
+
+.noteCompact {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  padding: 0.75rem;
+}
+
+/* Submit Error */
+.submitError {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Confirmation Page */
+.registerConfirmation {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+}
+
+.confirmationContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  background: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.confirmationContent h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.confirmationDetails {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+.confirmationDetails p {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.confirmationDetails strong {
+  color: #fbbf24;
+}
+
+.confirmationActions {
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem auto;
+    padding: 1.5rem;
+  }
+
+  .formGrid,
+  .reviewGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+
+  .progressBar {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .progressStepContainer {
+    flex: 0 0 calc(50% - 1rem);
+  }
+
+  .progressBar::before {
+    display: none;
+  }
+
+  .reviewCategory {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .stepHeader h2 {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .fileUpload {
+    padding: 1rem;
+  }
+
+  .registerConfirmation {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .confirmationContent h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Utility Classes */
+.textCenter {
+  text-align: center;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.mt2 {
+  margin-top: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .stepHeader h2 {
+    font-size: 1.15rem;
+  }
+  .progressBar {
+    gap: 0.5rem;
+  }
+  .progressStep {
+    width: 32px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+  .progressLabel {
+    font-size: 0.65rem;
+  }
+  .btn {
+    padding: 0.7rem 1.1rem;
+    font-size: 0.85rem;
+  }
+}

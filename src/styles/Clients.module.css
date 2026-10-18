@@ -1,0 +1,627 @@
+/* src/styles/Clients.module.css */
+.clientsPage {
+  padding: 1rem 2rem;
+}
+
+.clientsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.clientsHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.headerActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox input {
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 250px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  color: #6b7280;
+}
+
+.addClientBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.addClientBtn:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.statsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+}
+.statCard.total {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+}
+.statCard.active {
+  background: linear-gradient(135deg, #10b981, #047857);
+}
+.statCard.inactive {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.statIcon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  opacity: 0.9;
+}
+
+.statInfo h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.filtersSection {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.filterGroup label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.filterGroup select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 150px;
+  background: white;
+}
+
+.clientsTable {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.clientsTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.clientsTable th,
+.clientsTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.clientsTable th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.clientsTable tbody tr:hover {
+  background: #f9fafb;
+}
+
+.clientName {
+  font-weight: 600;
+  color: #111827;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status.active {
+  color: #10b981;
+  background: #d1fae5;
+}
+.status.inactive {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.viewBtn {
+  background: #3b82f6;
+  color: white;
+}
+.viewBtn:hover {
+  background: #2563eb;
+}
+.editBtn {
+  background: #f59e0b;
+  color: white;
+}
+.editBtn:hover {
+  background: #d97706;
+}
+.disableBtn {
+  background: #ef4444;
+  color: white;
+}
+.disableBtn:hover {
+  background: #dc2626;
+}
+.enableBtn {
+  background: #10b981;
+  color: white;
+}
+.enableBtn:hover {
+  background: #059669;
+}
+.resetBtn {
+  background: #8b5cf6;
+  color: white;
+}
+.resetBtn:hover {
+  background: #7c3aed;
+}
+.deleteBtn {
+  background: #6b7280;
+  color: white;
+}
+.deleteBtn:hover {
+  background: #4b5563;
+}
+
+.noClients {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.noDataIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #d1d5db;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modalHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  color: #374151;
+}
+
+.modalBody {
+  padding: 1.5rem;
+}
+
+.clientDetailSection {
+  margin-bottom: 2rem;
+}
+
+.clientDetailSection h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.detailGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detailItem label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.detailItem span {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.detailItem .status {
+  display: inline-flex;
+  width: fit-content;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.modalActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.primaryBtn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primaryBtn:hover {
+  background: #4338ca;
+}
+
+.secondaryBtn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.secondaryBtn:hover {
+  background: #e5e7eb;
+}
+
+/* ==================== TABLET ==================== */
+@media (max-width: 1024px) {
+  .statsCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filtersSection {
+    flex-wrap: wrap;
+  }
+  .clientsTable {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .clientsTable table {
+    min-width: 800px;
+  }
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 768px) {
+  .clientsPage {
+    padding: 0.75rem;
+  }
+
+  .clientsHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+    margin-bottom: 1rem;
+  }
+
+  .clientsHeader h2 {
+    font-size: 1.25rem;
+  }
+
+  .headerActions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .searchBox {
+    width: 100%;
+  }
+  .searchBox input {
+    width: 100%;
+  }
+
+  .addClientBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statsCards {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+
+  .statCard {
+    padding: 0.9rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .statIcon {
+    font-size: 1.4rem;
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .statInfo h3 {
+    font-size: 0.7rem;
+  }
+  .statValue {
+    font-size: 1.2rem;
+  }
+
+  .filtersSection {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .filterGroup {
+    width: 100%;
+  }
+  .filterGroup select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .clientsTable {
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .clientsTable table,
+  .clientsTable thead,
+  .clientsTable tbody,
+  .clientsTable tr,
+  .clientsTable th,
+  .clientsTable td {
+    display: block;
+  }
+
+  .clientsTable thead {
+    display: none;
+  }
+
+  .clientsTable tr {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    padding: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e5e7eb;
+  }
+
+  .clientsTable td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+    gap: 1rem;
+    text-align: right;
+  }
+
+  .clientsTable td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #6b7280;
+    text-align: left;
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .clientsTable td:last-child {
+    border-bottom: none;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem;
+  }
+
+  .actions button {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalContent {
+    width: 95%;
+    margin: 0.5rem;
+    max-height: 95vh;
+  }
+
+  .modalActions {
+    flex-direction: column;
+  }
+  .modalActions button {
+    width: 100%;
+    justify-content: center;
+  }
+  .detailGrid {
+    grid-template-columns: 1fr;
+  }
+}

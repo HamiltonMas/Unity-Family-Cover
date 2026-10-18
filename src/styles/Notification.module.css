@@ -1,0 +1,787 @@
+/* src/styles/Notifications.module.css */
+.notificationsPage {
+  padding: 1rem 2rem;
+  min-height: 100vh;
+}
+
+.notificationsHeader {
+  margin-bottom: 2rem;
+}
+
+.notificationsHeader h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.notificationsHeader p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.notificationsContainer {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+}
+
+/* Sidebar */
+.notificationsSidebar {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.navItem:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.navItem.active {
+  background: #4f46e5;
+  color: white;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+.navItem svg {
+  font-size: 1.1rem;
+}
+
+.unreadBadge {
+  position: absolute;
+  right: 1rem;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Sidebar Stats */
+.sidebarStats {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.sidebarStats h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.statValue {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Sidebar Actions */
+.sidebarActions {
+  margin-top: auto;
+}
+
+.saveBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.saveBtn:hover {
+  background: #4338ca;
+}
+
+/* Main Content */
+.notificationsContent {
+  flex: 1;
+}
+
+/* Settings Section */
+.settingsSection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.settingsSection h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.settingsSection p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.settingsCard {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.settingsCard h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.settingsCard p {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.settingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settingItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.settingInfo {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.settingInfo h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.settingInfo p {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Toggle Switch */
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.toggleSwitch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1d5db;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggleSwitch input:checked + .slider {
+  background-color: #4f46e5;
+}
+
+.toggleSwitch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Time Input */
+.timeInput {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  min-width: 120px;
+}
+
+.timeInput:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Days Grid */
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.dayCheckbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dayCheckbox input {
+  display: none;
+}
+
+.dayLabel {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #374151;
+  text-align: center;
+  width: 100%;
+  transition: all 0.2s;
+}
+
+.dayCheckbox input:checked + .dayLabel {
+  background: #4f46e5;
+  color: white;
+  border-color: #4f46e5;
+}
+
+/* History Section */
+.historySection {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.historyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.historyHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.historyActions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+}
+
+.filterSelect {
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.markAllBtn,
+.clearAllBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.markAllBtn {
+  background: #10b981;
+  color: white;
+}
+
+.markAllBtn:hover {
+  background: #059669;
+}
+
+.clearAllBtn {
+  background: #ef4444;
+  color: white;
+}
+
+.clearAllBtn:hover {
+  background: #dc2626;
+}
+
+/* Notifications List */
+.notificationsList {
+  padding: 1rem;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.notificationItem {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.notificationItem:hover {
+  background: #f9fafb;
+}
+
+.notificationItem.unread {
+  background: #f0f9ff;
+  border-left: 3px solid #3b82f6;
+}
+
+.notificationItem.highPriority {
+  border-left: 3px solid #ef4444;
+}
+
+.notificationItem.mediumPriority {
+  border-left: 3px solid #f59e0b;
+}
+
+.notificationItem.lowPriority {
+  border-left: 3px solid #10b981;
+}
+
+.notificationIcon {
+  font-size: 1.5rem;
+  color: #4f46e5;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.notificationContent {
+  flex: 1;
+}
+
+.notificationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.notificationHeader h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.notificationTime {
+  font-size: 0.8rem;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.notificationMessage {
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.notificationMeta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.notificationType {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.notificationChannel {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #6b7280;
+}
+
+.notificationActions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.markReadBtn,
+.deleteBtn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.markReadBtn {
+  color: #10b981;
+}
+
+.markReadBtn:hover {
+  background: #d1fae5;
+}
+
+.deleteBtn {
+  color: #ef4444;
+}
+
+.deleteBtn:hover {
+  background: #fee2e2;
+}
+
+/* No Notifications */
+.noNotifications {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+}
+
+.noNotificationsIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #d1d5db;
+}
+
+.noNotifications h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .notificationsContainer {
+    flex-direction: column;
+  }
+
+  .notificationsSidebar {
+    width: 100%;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .navItem {
+    white-space: nowrap;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .notificationsPage {
+    padding: 1rem;
+  }
+
+  .historyHeader {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .historyActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .settingInfo {
+    margin-right: 0;
+  }
+
+  .notificationItem {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .notificationHeader {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .notificationActions {
+    align-self: flex-end;
+  }
+
+  .daysGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* ==================== MOBILE ==================== */
+@media (max-width: 768px) {
+  .notificationsPage {
+    padding: 0.75rem;
+  }
+
+  .notificationsHeader h1 {
+    font-size: 1.35rem;
+  }
+  .notificationsHeader p {
+    font-size: 0.85rem;
+  }
+
+  .notificationsContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .notificationsSidebar {
+    width: 100%;
+  }
+
+  .sidebarNav {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .navItem {
+    white-space: nowrap;
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .sidebarStats {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .statItem {
+    padding: 0.5rem;
+  }
+  .statValue {
+    font-size: 1.1rem;
+  }
+
+  .settingsSection {
+    padding: 1rem;
+  }
+
+  .settingsSection h2 {
+    font-size: 1.2rem;
+  }
+
+  .settingsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .settingsCard {
+    padding: 1rem;
+  }
+
+  .settingItem {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  .settingInfo {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .toggleSwitch {
+    align-self: flex-start;
+  }
+
+  .timeInput {
+    min-width: 100%;
+  }
+
+  .daysGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .dayLabel {
+    padding: 0.4rem 0.25rem;
+    font-size: 0.7rem;
+  }
+
+  .historyHeader {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .historyHeader h2 {
+    font-size: 1.2rem;
+  }
+
+  .historyActions {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filterGroup {
+    width: 100%;
+  }
+  .filterSelect {
+    width: 100%;
+  }
+
+  .markAllBtn,
+  .clearAllBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .notificationsList {
+    padding: 0.5rem;
+  }
+
+  .notificationItem {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .notificationHeader {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .notificationTime {
+    font-size: 0.7rem;
+  }
+
+  .notificationMeta {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .notificationActions {
+    align-self: flex-end;
+  }
+}

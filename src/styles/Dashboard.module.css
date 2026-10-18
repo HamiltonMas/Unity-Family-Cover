@@ -1,0 +1,494 @@
+/* Dashboard Home */
+.dashboardHome {
+  padding: 1.5rem;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.companyHeader {
+  margin-bottom: 2rem;
+}
+
+.companyTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.companyLocation {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.statCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.statIcon {
+  font-size: 2.2rem;
+  margin-right: 1rem;
+  opacity: 0.9;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.statInfo {
+  flex: 1;
+}
+
+.statTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statValue {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.statChange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.statChangeUp {
+  color: #22c55e;
+}
+
+.statChangeDown {
+  color: #ef4444;
+}
+
+/* Chart Section */
+.chartSection {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.chartTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chartTitle::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Bottom Grid */
+.bottomGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.recentSection,
+.notificationSection {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+}
+
+.sectionTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionTitle::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+/* Activity List */
+.activityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activityItem {
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: #374151;
+  border-bottom: 1px solid #f8fafc;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.activityItem:hover {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 -0.5rem;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityDot {
+  height: 10px;
+  width: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+
+.activityText {
+  flex: 1;
+  line-height: 1.5;
+}
+
+/* Notification List */
+.notificationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notificationItem {
+  border-bottom: 1px solid #f8fafc;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.notificationItem:hover {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 -0.5rem;
+}
+
+.notificationItem:last-child {
+  border-bottom: none;
+}
+
+.notificationMessage {
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.notificationTime {
+  font-size: 0.8rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.notificationTime::before {
+  content: "🕒";
+  font-size: 0.7rem;
+}
+
+/* Custom Chart Styles */
+.chartContainer {
+  position: relative;
+}
+
+.chartLegend {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.legendColor {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legendMembers {
+  background: #3b82f6;
+}
+
+.legendClaims {
+  background: #f59e0b;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bottomGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardHome {
+    padding: 1rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .statCard {
+    padding: 1.25rem;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
+  }
+
+  .chartSection,
+  .recentSection,
+  .notificationSection {
+    padding: 1.25rem;
+  }
+
+  .companyTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardHome {
+    padding: 0.75rem;
+  }
+
+  .statCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .statIcon {
+    margin-right: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.8rem;
+  }
+
+  .statValue {
+    font-size: 1.3rem;
+  }
+
+  .chartSection,
+  .recentSection,
+  .notificationSection {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation for stat cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statCard {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.statCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.statCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.statCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.statCard:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.statCard:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* ==================== MOBILE ==================== */
+@media (max-width: 768px) {
+  .dashboardHome {
+    padding: 0.75rem;
+  }
+
+  .companyTitle {
+    font-size: 1.35rem;
+  }
+  .companyLocation {
+    font-size: 0.85rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .statCard {
+    padding: 0.9rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 12px;
+  }
+
+  .statIcon {
+    font-size: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .statTitle {
+    font-size: 0.7rem;
+  }
+  .statValue {
+    font-size: 1.15rem;
+    margin-bottom: 0.3rem;
+  }
+  .statChange {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .chartSection {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .chartTitle {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+  .chartLegend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .recentSection,
+  .notificationSection {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+  }
+  .activityItem {
+    font-size: 0.85rem;
+  }
+  .notificationMessage {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .statCard {
+    flex-direction: row;
+    text-align: left;
+  }
+  .statIcon {
+    margin-right: 0.75rem;
+    margin-bottom: 0;
+  }
+}
